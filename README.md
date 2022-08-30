@@ -4,11 +4,11 @@
 
 Find this line in `...\mods\Essential Indicators\main.lua` 
 ```
-local index = npcSide.index
+local entry = tes3.getJournalIndex {id = (npcSide.entry)}
 ```
 and change it to
 ```
-local index = npcSide.index or 0
+local entry = tes3.getJournalIndex {id = (npcSide.entry)} or 0
 ```
 
 ## [Worth Its Weight](https://www.nexusmods.com/morrowind/mods/48070) by JaceyS
