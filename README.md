@@ -24,6 +24,18 @@ local object = containerMenu and
 		"MenuContents_ObjectContainer")
 ```
 
+## [Ashfall](https://www.nexusmods.com/morrowind/mods/49057) by Merlord
+
+Find this line in `...\mods\mer\ashfall\activators\Activator.lua` 
+```
+if string.find(reference.baseObject.id:lower(), pattern) ~= nil then
+```
+and change it to
+```
+if reference.baseObject and
+	string.find(reference.baseObject.id:lower(), pattern) ~= nil then
+```
+
 ## One Life to Live ([Nexus](https://www.nexusmods.com/morrowind/mods/48316), [Moddinghall](https://mw.moddinghall.com/file/139-one-life-to-live)) by Necrolesian
 
 Find this line in `...\mods\OneLifetoLive\main.lua` 
