@@ -11,6 +11,20 @@ and change it to
 local entry = tes3.getJournalIndex {id = (npcSide.entry)} or 0
 ```
 
+## BTB's Game Improvements - Necro Edit ([Nexus](https://www.nexusmods.com/morrowind/mods/47129), [Moddinghall](https://mw.moddinghall.com/file/117-btbs-game-improvements-necro-edit))
+
+### Equipment
+
+The values of high-end equipment have been greatly reduced and armor ratings have been rebalanced. The armor progression is better but still need some work. I am thinking added some good-looking armor pieces and edit their stats to fill in the gap. 
+
+## [Better Character Classes](https://www.nexusmods.com/morrowind/mods/47078)
+
+Required for [Ahead of the Classes - Joseph Edit](https://github.com/JoanyMcKarelyn/Ahead-of-the-Classes-Joseph-Edit). Both this mod and Balanced Passive Races and Birthsigns are assuming the premise that the player only uses one primary weapon type (not counting marksman or hand-to-hand) and one primary armor type. 
+
+## [Ahead of the Classes - Joseph Edit](https://github.com/JoanyMcKarelyn/Ahead-of-the-Classes-Joseph-Edit)
+
+Danae's original mod has preset classes for vanilla playable classes therefore not compatible with Better Character Classes. The Joseph Edit is not only compatible with Better Character Classes but also rebalance the loadouts to better suit BTBGI. You don't need neither TR_Data nor OAAB_Data as well. 
+
 ## [Worth Its Weight](https://www.nexusmods.com/morrowind/mods/48070) by JaceyS
 
 Find this line in `...\mods\WorthItsWeight\main.lua` 
