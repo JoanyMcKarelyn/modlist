@@ -15,7 +15,7 @@ local entry = tes3.getJournalIndex {id = (npcSide.entry)} or 0
 
 ### Equipment
 
-The values of high-end equipment have been greatly reduced and armor ratings have been rebalanced. The armor progression is better but still need some work. I am thinking added some good-looking armor pieces and edit their stats to fill in the gap. 
+With BTBGI, the values of high-end equipment have been greatly reduced and armor ratings have been rebalanced. The armor progression is now better but still needs some work. I am thinking adding some good-looking armor sets then editing their stats to fill in the gap. 
 
 ## [Better Character Classes](https://www.nexusmods.com/morrowind/mods/47078)
 
