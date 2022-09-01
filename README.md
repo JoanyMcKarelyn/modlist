@@ -1,5 +1,9 @@
 # Modding Notes
 
+My thoughts on mods and fixes and tweaks. 
+
+# Convenience Mods
+
 ## [Essential Indicators](https://www.nexusmods.com/morrowind/mods/48267) by Anumaril21
 
 Find this line in `...\mods\Essential Indicators\main.lua` 
@@ -11,11 +15,28 @@ and change it to
 local entry = tes3.getJournalIndex {id = (npcSide.entry)} or 0
 ```
 
+# Game Balance and Difficulty
+
 ## BTB's Game Improvements - Necro Edit ([Nexus](https://www.nexusmods.com/morrowind/mods/47129), [Moddinghall](https://mw.moddinghall.com/file/117-btbs-game-improvements-necro-edit))
 
 ### Equipment
 
-With BTBGI, the values of high-end equipment have been greatly reduced and armor ratings have been rebalanced. The armor progression is now better but still needs some work. I am thinking adding some good-looking armor sets then editing their stats to fill in the gap. 
+With BTBGI, the values of high-end equipment have been greatly reduced and armor ratings have been rebalanced. 
+
+## [Morrowind Anti-Cheese Tweaked](https://www.nexusmods.com/morrowind/mods/50308) by Remiros and Sigourn
+
+Delete the following NPC edits to make it compatible with MDMD:
+
+- Draramu Hloran
+- Dreveni Hlaren
+- Elante
+- Furius Acilius
+- Galmis Dren
+- Koffutto Gilgar
+- Raxle Berne
+- Sorkvild the Raven
+- Vindamea Drethan
+- Volrina Quarra
 
 ## [Better Character Classes](https://www.nexusmods.com/morrowind/mods/47078)
 
