@@ -91,7 +91,7 @@ local entry = tes3.getJournalIndex {id = (npcSide.entry)} or 0
 
 Nobody watches the Morrowind intro so why even bother to install a high resolution one.
 
-## [Crosshair White Dot](http://mw.modhistory.com/download-56-1312)
+## [Crosshair White Dot](https://github.com/JoanyMcKarelyn/morrowind-modding-notes/raw/main/mods/Crosshair%20White%20Dot.7z)
 
 A white dot crosshair.
 
