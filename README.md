@@ -6,7 +6,7 @@ My thoughts on mods and fixes and tweaks.
 
 ## [Wrye Mash](https://www.nexusmods.com/morrowind/mods/45439)
 
-# Mod Tab: Line Colors
+### Mod Tab: Line Colors
 
 - Red: The modification date/time of the master/plugin is problematic. Change the modification date of the files by a second or more via right panel Mod Details.
 
@@ -61,6 +61,14 @@ Save the script and the plugin, then clean with tes3cmd.
 
 # Convenience Mods
 
+## [UI Expansion](https://www.nexusmods.com/morrowind/mods/46071) By NullCascade
+
+### MCM Settings
+
+On Features page:
+
+- Auto-select search bar: None (This really annoys me.)
+
 ## [Essential Indicators](https://www.nexusmods.com/morrowind/mods/48267)
 
 Find this line in `...\mods\Essential Indicators\main.lua`
@@ -83,9 +91,9 @@ local entry = tes3.getJournalIndex {id = (npcSide.entry)} or 0
 
 Nobody watches the Morrowind intro so why even bother to install a high resolution one.
 
-## [Crosshair Pack II](http://mw.modhistory.com/download-56-1312)
+## [Crosshair White Dot](http://mw.modhistory.com/download-56-1312)
 
-Copy `..\ID3746_2_26_Crosshair_Pack_II_20040510\dot\gray.dds`, paste it in a newly created folder named `Textures`, and rename it `Target.dds`. Add the folder to archive `Crosshair Gray Dot.7z` and install it.
+A white dot crosshair.
 
 # Game Balance and Difficulty
 
@@ -145,6 +153,18 @@ local object = containerMenu and
 	containerMenu:getPropertyObject(
 		"MenuContents_ObjectContainer")
 ```
+
+## [Ashfall](https://www.nexusmods.com/morrowind/mods/49057) by Merlord
+
+What do I like about Ashfall:
+
+- A necth leather backpack carried on my back and with my waterskin attached
+- A bedroll with Ashlander blanket that helps me get better sleep on the cold ground
+- Can't sleep because one blanket isn't enough to keep you from freezing on those cold nights
+- A simple tent that sleeps me and my pet
+- Bottles, Flasks, and Jugs that hold liquid
+- A hammock that I crafted using wood, fabric, straw, and can lay down on
+- A sack I made with fabric and rope
 
 ## [GMST Menu](https://www.nexusmods.com/morrowind/mods/46428) by Merlord
 
