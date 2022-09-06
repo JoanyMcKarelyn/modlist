@@ -1,6 +1,6 @@
 # Modding Notes
 
-My thoughts on mods and fixes and tweaks.
+Some notes I took for [this morrowind mod list](https://github.com/Necrolesian/morrowind-mod-list). 
 
 # Utilites
 
@@ -13,6 +13,38 @@ My thoughts on mods and fixes and tweaks.
 ## [mlox](https://github.com/rfuzzo/mlox/releases/) and [mlox-rules](https://github.com/DanaePlays/mlox-rules)
 
 I use mlox because I uninstall and reinstall mods a lot. Download zip and follow the steps from mlox-rules.
+
+## Original Data Files Archive
+
+Create an archive with all the directories in it. Yes, include BookArt, Icons, and Meshes directories, because why not. So the directory structure of the archive should be something like this:
+
+```
+01 BookArt
+	BookArt
+02 Fonts
+	Fonts
+03 Icons
+	Icons
+04 Meshes
+	Meshes
+05 Music - Battle
+    Music
+        Battle
+06 Music - Explore
+    Music
+        Explore
+07 Music - Special
+    Music
+        Special
+08 Sound
+    Sound
+09 Splash
+    Splash
+10 Textures
+    Textures
+11 Video
+    Video
+```
 
 # Bug Fixes
 
@@ -83,19 +115,51 @@ and change it to
 local entry = tes3.getJournalIndex {id = (npcSide.entry)} or 0
 ```
 
-## [Character Creation Name Generator](https://www.nexusmods.com/morrowind/mods/46189) by Aleist3r
-
 # Graphics - User Interface
-
-## [Blank Intro Movies](https://www.nexusmods.com/morrowind/mods/44319)
-
-Nobody watches the Morrowind intro so why even bother to install a high resolution one.
 
 ## [Crosshair White Dot](https://github.com/JoanyMcKarelyn/morrowind-modding-notes/raw/main/mods/Crosshair%20White%20Dot.7z)
 
 A white dot crosshair.
 
+## [Alternate Enchanted Item Icons](http://mw.modhistory.com/download-90-10395)
+
+Add the content of `..\Alternate Icon Set 2\` to archive named `Alternate Enchanted Items Icons`.
+
+# Graphics - Videos
+
+## [Blank Intro Movies](https://www.nexusmods.com/morrowind/mods/44319)
+
+Nobody watches the Morrowind intro so why even bother to install a high resolution one.
+
+# Graphics - Mesh Replacers
+
+I usually go with vanilla meshes and textures because I am on a potato laptop.
+
+## [Weapon Sheathing](https://www.nexusmods.com/morrowind/mods/46069) and [Bow Position Edit](https://www.nexusmods.com/morrowind/mods/46069)
+
+Make sure Weapon Sheathing is installed before Morrowind Optimization Patch **03 Weapon Sheathing Patch** and Bow Position Edit is installed after Weapon Sheathing.
+
+## [Morrowind Optimization Patch](https://github.com/mop-org/morrowind-optimization-patch)
+
+Grab mop from the GitHub repo not Nexus. In addition to the **00 Core** sub-package, install **01 Lake Fjalding Anti-Suck**, **02 Better Vanilla Textures** and **03 Weapon Sheathing Patch** sub-packages. Don't install the **03 Chuzei Fix** because we'll install a BTBGI compatible version later. Ignore the **05 Graphic Herbalism Patch**.
+
+# Gameplay Mods
+
+## [Magicka Expanded](https://www.nexusmods.com/morrowind/mods/47111) by OperatorJack
+
+Install **00 - Framework**, **01 - Resource Pack** and **02 - Lore Friendly Pack** sub-packages. Vanilla Morrowind doesn't have Bound Greaves and Bound Pauldrons spell for some reason and Lore Friendly Pack adds them in the game.
+
 # Game Balance and Difficulty
+
+## [HardTrade](https://www.nexusmods.com/morrowind/mods/47368) by AxeMagister
+
+Grab version 2.6 under "old files". MCM Settings: No Show messages, No Limit player stats to 100 when trading. Comment out a few lines:
+
+```
+	-- tes3.findGMST("fBargainOfferMulti").value = -10		tes3.findGMST("fSpellMakingValueMult").value = 10		tes3.findGMST("fEnchantmentValueMult").value = 100
+    -- tes3.findGMST("fBribe10Mod").value = 20				tes3.findGMST("fBribe100Mod").value = 50				tes3.findGMST("fBribe1000Mod").value = 100
+    -- event.register("uiActivated", onPersuationMenu, {filter = "MenuPersuasion"})
+```
 
 ## [Morrowind Anti-Cheese Tweaked](https://www.nexusmods.com/morrowind/mods/50308) by Remiros and Sigourn
 
@@ -117,6 +181,27 @@ According to Sigourn and Necrolesian, Morrowind Anti-Cheese Tweaked.esp should c
 So **I think** Morrowind Anti-Cheese Tweaked.esp should be loaded before BTB's Game Improvements (Necro Edit).esp. Then we have our Daedric Towershield back. Yes, Scrap Metal is now worth 30 gold instead of 200 but I don't care.
 
 ## BTB's Game Improvements - Necro Edit ([Nexus](https://www.nexusmods.com/morrowind/mods/47129), [Moddinghall](https://mw.moddinghall.com/file/117-btbs-game-improvements-necro-edit)) by Necrolesian
+
+### Settings
+
+Restocking supplies of empty soul gems (Petty, Lesser, Common) have been added to the following merchants:
+
+- Arrille, Seyda Neen: Petty, Lesser
+- Aunius Autrus, Wolverine Hall Imperial Cult
+- Chanil-Lee, Six Fishes
+- Diren Vendu, Tel Mora Tower Service
+- Elynu Saren, Suran Temple
+- Fanildil, Hawkmoth Legion Garrison
+- Ferise Varo, Vos Varo Tradehouse: Common, Greater
+- J'Rasha, Vivec J'Rasha Healer: Petty, Lesser
+- Medila Indaren, Caldera Mages Guild: Lesser, Common, Greater
+- Mertisi Andavel, Tel Branora Upper Tower: Common, Greater
+- Nelso Salenim, Telvanni Council House Entry: Lesser, Common, Greater
+- Salver Lleran, Vivec Telvanni Sorcerer: Common, Greater
+- Saras Orelu, Molag Mar Temple
+- Solea Nuccusius, Moonmoth Prison Towers
+- Syloria Siruliulus, Buckmoth: Lesser, Common, Greater
+- Ulmiso Maloren, Ghostgate Tower of Dawn Lower Level: Common, Greater
 
 ## [Better Character Classes](https://www.nexusmods.com/morrowind/mods/47078)
 
