@@ -156,7 +156,7 @@ Install **00 - Framework**, **01 - Resource Pack** and **02 - Lore Friendly Pack
 Grab version 2.6 under "old files". MCM Settings: No Show messages, No Limit player stats to 100 when trading. Comment out a few lines:
 
 ```
-	-- tes3.findGMST("fBargainOfferMulti").value = -10		tes3.findGMST("fSpellMakingValueMult").value = 10		tes3.findGMST("fEnchantmentValueMult").value = 100
+    -- tes3.findGMST("fBargainOfferMulti").value = -10		tes3.findGMST("fSpellMakingValueMult").value = 10		tes3.findGMST("fEnchantmentValueMult").value = 100
     -- tes3.findGMST("fBribe10Mod").value = 20				tes3.findGMST("fBribe100Mod").value = 50				tes3.findGMST("fBribe1000Mod").value = 100
     -- event.register("uiActivated", onPersuationMenu, {filter = "MenuPersuasion"})
 ```
