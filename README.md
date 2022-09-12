@@ -1,95 +1,22 @@
 # Modding Notes
 
-Some notes I took for [this morrowind mod list](https://github.com/Necrolesian/morrowind-mod-list). 
+Some notes I took for [this morrowind mod list](https://github.com/Necrolesian/morrowind-mod-list).
 
 # Utilites
 
 ## [Wrye Mash](https://www.nexusmods.com/morrowind/mods/45439)
 
-### Mod Tab: Line Colors
+### Installers Tab: Text Background
+
+- Yellow: Indicates that the package has "underrides" by higher order packages. It can be repaired by running Anneal or Anneal All.
+
+### Mods Tab: Line Colors
 
 - Red: The modification date/time of the master/plugin is problematic. Change the modification date of the files by a second or more via right panel Mod Details.
 
 ## [mlox](https://github.com/rfuzzo/mlox/releases/) and [mlox-rules](https://github.com/DanaePlays/mlox-rules)
 
 I use mlox because I uninstall and reinstall mods a lot. Download zip and follow the steps from mlox-rules.
-
-## Original Data Files Archive
-
-Create an archive with all the directories in it. Yes, include BookArt, Icons, and Meshes directories, because why not. So the directory structure of the archive should be something like this:
-
-```
-01 BookArt
-	BookArt
-02 Fonts
-	Fonts
-03 Icons
-	Icons
-04 Meshes
-	Meshes
-05 Music - Battle
-    Music
-        Battle
-06 Music - Explore
-    Music
-        Explore
-07 Music - Special
-    Music
-        Special
-08 Sound
-    Sound
-09 Splash
-    Splash
-10 Textures
-    Textures
-11 Video
-    Video
-```
-
-# Bug Fixes
-
-## [Texture Fix](http://mw.modhistory.com/download-56-10353)
-
-Open up Texture Fix 2.0.esm in Enchanted Editor, delete `tx_lavacrust00.tga` and `MA_sandstone02` in the "Land Textures" category, then save the file.
-
-## [Dubdilla Location Fix](https://www.nexusmods.com/morrowind/mods/46720)
-
-Find these lines the script VampireMolag:
-
-```
-		elseif ( GetJournalIndex "MS_VampireCure" == 40 )
-			if ( PCVampire != 0 )
-				if ( Player->SayDone == 1 )
-					Player->Say "Vo\Misc\MS_VampireMolag3.wav","I see you have done as I asked, little vampire. It was not easy for me to obtain the cure, but I was able to pry it from Vaermina after some...discussion. You have earned it. Now I have eternity to punish my daughter for her defiance. Your curse is lifted. Yet...I wonder, will you miss the taste of blood on your lips? When you sleep, will you taste the salt and copper flowing over your tongue? Go, mortal. Bask in your precious sunlight."
-					Journal "MS_VampireCure" 50
-					StartScript "Vampire_Cure_PC"
-					set talk to 0
-				endif
-			endif
-		endif
-	endif
-endif
-
-```
-
-and change them to
-
-```
-	elseif ( GetJournalIndex "MS_VampireCure" == 40 )
-		if ( PCVampire != 0 )
-			if ( Player->SayDone == 1 )
-				Player->Say "Vo\Misc\MS_VampireMolag3.wav","I see you have done as I asked, little vampire. It was not easy for me to obtain the cure, but I was able to pry it from Vaermina after some...discussion. You have earned it. Now I have eternity to punish my daughter for her defiance. Your curse is lifted. Yet...I wonder, will you miss the taste of blood on your lips? When you sleep, will you taste the salt and copper flowing over your tongue? Go, mortal. Bask in your precious sunlight."
-				Journal "MS_VampireCure" 50
-				StartScript "Vampire_Cure_PC"
-				set talk to 0
-			endif
-		endif
-	endif
-endif
-
-```
-
-Save the script and the plugin, then clean with tes3cmd.
 
 # Convenience Mods
 
@@ -129,11 +56,11 @@ Add the content of `..\Alternate Icon Set 2\` to archive named `Alternate Enchan
 
 ## [Blank Intro Movies](https://www.nexusmods.com/morrowind/mods/44319)
 
-Nobody watches the Morrowind intro so why even bother to install a high resolution one.
+Everyone skips the intro movie. 
 
 # Graphics - Mesh Replacers
 
-I usually go with vanilla meshes and textures because I am on a potato laptop.
+I usually go with vanilla meshes and textures because I am on a potato laptop. And I personally don't like most of the body and head replacers. 
 
 ## [Weapon Sheathing](https://www.nexusmods.com/morrowind/mods/46069) and [Bow Position Edit](https://www.nexusmods.com/morrowind/mods/46069)
 
@@ -142,6 +69,30 @@ Make sure Weapon Sheathing is installed before Morrowind Optimization Patch **03
 ## [Morrowind Optimization Patch](https://github.com/mop-org/morrowind-optimization-patch)
 
 Grab mop from the GitHub repo not Nexus. In addition to the **00 Core** sub-package, install **01 Lake Fjalding Anti-Suck**, **02 Better Vanilla Textures** and **03 Weapon Sheathing Patch** sub-packages. Don't install the **03 Chuzei Fix** because we'll install a BTBGI compatible version later. Ignore the **05 Graphic Herbalism Patch**.
+
+# Graphics - Shaders and Weather
+
+## [MGE XE Shader Pack](https://www.dropbox.com/s/egtk0osv4vrgar2/MGE%20XE%20Shader%20Pack%202021-11-26.7z?dl=1)
+
+In the core sub-package, _delete_ the `MWSE` directory. Install only the core sub-package. Open up MGE XE. Doesn't matter the Enable shader checkbox is ticked here or not, you can always toggle it on and off in game. Here is the shader list I recommend (and their order is important):
+
+```
+MGG SSAO
+Underwater Interior Effects
+Underwater Effects
+Sunshafts
+Bloom Soft
+Bloom Soft Sky
+EdgeAA
+```
+
+I set up the shaders solely for screenshots because my fps hit single digit with shaders on. 
+
+# Graphics - Atlas Mods
+
+## [Glass Domes of Vivec](https://www.nexusmods.com/morrowind/mods/48935) and [Moonrain Edition](https://www.nexusmods.com/morrowind/mods/48946) by tewlwolow
+
+If you are using [Project Atlas](https://www.nexusmods.com/morrowind/mods/45399) version 0.7.2 and Glass Domes of Vivec Moonrain Edition version 1.2.8, then you'll need to install the `\Textures\ATL\atlas_velothi.dds` from version 0.6.5 as well. 
 
 # Gameplay Mods
 
@@ -156,9 +107,9 @@ Install **00 - Framework**, **01 - Resource Pack** and **02 - Lore Friendly Pack
 Grab version 2.6 under "old files". MCM Settings: No Show messages, No Limit player stats to 100 when trading. Comment out a few lines:
 
 ```
-    -- tes3.findGMST("fBargainOfferMulti").value = -10		tes3.findGMST("fSpellMakingValueMult").value = 10		tes3.findGMST("fEnchantmentValueMult").value = 100
-    -- tes3.findGMST("fBribe10Mod").value = 20				tes3.findGMST("fBribe100Mod").value = 50				tes3.findGMST("fBribe1000Mod").value = 100
-    -- event.register("uiActivated", onPersuationMenu, {filter = "MenuPersuasion"})
+	-- tes3.findGMST("fBargainOfferMulti").value = -10		tes3.findGMST("fSpellMakingValueMult").value = 10		tes3.findGMST("fEnchantmentValueMult").value = 100
+	-- tes3.findGMST("fBribe10Mod").value = 20				tes3.findGMST("fBribe100Mod").value = 50				tes3.findGMST("fBribe1000Mod").value = 100
+	-- event.register("uiActivated", onPersuationMenu, {filter = "MenuPersuasion"})
 ```
 
 ## [Morrowind Anti-Cheese Tweaked](https://www.nexusmods.com/morrowind/mods/50308) by Remiros and Sigourn
@@ -180,29 +131,6 @@ According to Sigourn and Necrolesian, Morrowind Anti-Cheese Tweaked.esp should c
 
 So **I think** Morrowind Anti-Cheese Tweaked.esp should be loaded before BTB's Game Improvements (Necro Edit).esp. Then we have our Daedric Towershield back. Yes, Scrap Metal is now worth 30 gold instead of 200 but I don't care.
 
-## BTB's Game Improvements - Necro Edit ([Nexus](https://www.nexusmods.com/morrowind/mods/47129), [Moddinghall](https://mw.moddinghall.com/file/117-btbs-game-improvements-necro-edit)) by Necrolesian
-
-### Settings
-
-Restocking supplies of empty soul gems (Petty, Lesser, Common) have been added to the following merchants:
-
-- Arrille, Seyda Neen: Petty, Lesser
-- Aunius Autrus, Wolverine Hall Imperial Cult
-- Chanil-Lee, Six Fishes
-- Diren Vendu, Tel Mora Tower Service
-- Elynu Saren, Suran Temple
-- Fanildil, Hawkmoth Legion Garrison
-- Ferise Varo, Vos Varo Tradehouse: Common, Greater
-- J'Rasha, Vivec J'Rasha Healer: Petty, Lesser
-- Medila Indaren, Caldera Mages Guild: Lesser, Common, Greater
-- Mertisi Andavel, Tel Branora Upper Tower: Common, Greater
-- Nelso Salenim, Telvanni Council House Entry: Lesser, Common, Greater
-- Salver Lleran, Vivec Telvanni Sorcerer: Common, Greater
-- Saras Orelu, Molag Mar Temple
-- Solea Nuccusius, Moonmoth Prison Towers
-- Syloria Siruliulus, Buckmoth: Lesser, Common, Greater
-- Ulmiso Maloren, Ghostgate Tower of Dawn Lower Level: Common, Greater
-
 ## [Better Character Classes](https://www.nexusmods.com/morrowind/mods/47078)
 
 Required for [Ahead of the Classes - Joseph Edit](https://github.com/JoanyMcKarelyn/Ahead-of-the-Classes-Joseph-Edit). Both this mod and Balanced Passive Races and Birthsigns are assuming the premise that the player only uses one primary weapon type (not counting marksman or hand-to-hand) and one primary armor type.
@@ -222,6 +150,12 @@ Here is a list of places where you can find independent Enchanters:
 - Tel Aruhn, Maren Uvaren: Enchanter
 - Mournhold, Craftmen's Hall,
 - Holamayan Monastery
+
+## [DM_DB Armor Replacer TCBOO Patch](https://github.com/JoanyMcKarelyn/morrowind-modding-notes/raw/main/mods/DM_DB%20Armor%20Replacer%20TCBOO%20Patch.7z)
+
+This plugin merges the inventory of `db_assassin3` and `db_assassin3a` so Dark Brotherhood Assassins have both the Dark Brotherhood Mask from DM_DB Armor Replacer and the Adamantium Shortsword from There Can Be Only One. Loads after TCBOO (mlox rules written below).
+
+# Not Optional Hardcore Mods
 
 ## [Worth Its Weight](https://www.nexusmods.com/morrowind/mods/48070)
 
@@ -317,6 +251,36 @@ Glass Domes of Vivec_atmospheric arena Ownership Overhaul Patch.ESP
 MDMD - More Deadly Morrowind Denizens.ESP
 MDMD - Creatures Add-On.ESP
 Expansions Integrated MDMD Patch.ESP
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; @There Can Be Only One
+
+[Order]
+DM_DB Armor Replacer.esp
+There Can Be Only One.ESP
+
+[Order]
+DM_DB Armor Replacer.esp
+There Can Be Only One (Alt Fyr).ESP
+
+[Order]
+DM_DB Armor Replacer.esp
+There Can Be Only One (Alt Fyr 2).ESP
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; @DM_DB Armor Replacer TCBOO Patch
+
+[Order]
+There Can Be Only One.ESP
+DM_DB Armor Replacer TCBOO Patch.esp
+
+[Order]
+There Can Be Only One (Alt Fyr).ESP
+DM_DB Armor Replacer TCBOO Patch.esp
+
+[Order]
+There Can Be Only One (Alt Fyr 2).ESP
+DM_DB Armor Replacer TCBOO Patch.esp
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; @There Can Be Only One Expansions Integrated Patch
