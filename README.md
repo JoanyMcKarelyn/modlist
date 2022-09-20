@@ -22,11 +22,11 @@ I use mlox because I uninstall and reinstall mods a lot. Download zip and follow
 
 ## [UI Expansion](https://www.nexusmods.com/morrowind/mods/46071) By NullCascade
 
-### MCM Settings
+Features page Auto-select search bar: None (This really annoys me.)
 
-On Features page:
+## [Hot Quests](https://www.nexusmods.com/morrowind/mods/48976) by abot
 
-- Auto-select search bar: None (This really annoys me.)
+Change key bind to `Ctrl-U` and `Ctrl-I` respectively because I am using Calendar. The default key bind closes my journal every time I type words that contain `u` or `i` in my notes. 
 
 ## [Essential Indicators](https://www.nexusmods.com/morrowind/mods/48267)
 
@@ -52,15 +52,7 @@ A white dot crosshair.
 
 Add the content of `..\Alternate Icon Set 2\` to archive named `Alternate Enchanted Items Icons`.
 
-# Graphics - Videos
-
-## [Blank Intro Movies](https://www.nexusmods.com/morrowind/mods/44319)
-
-Everyone skips the intro movie. 
-
 # Graphics - Mesh Replacers
-
-I usually go with vanilla meshes and textures because I am on a potato laptop. And I personally don't like most of the body and head replacers. 
 
 ## [Weapon Sheathing](https://www.nexusmods.com/morrowind/mods/46069) and [Bow Position Edit](https://www.nexusmods.com/morrowind/mods/46069)
 
@@ -86,8 +78,6 @@ Bloom Soft Sky
 EdgeAA
 ```
 
-I set up the shaders solely for screenshots because my fps hit single digit with shaders on. 
-
 # Graphics - Atlas Mods
 
 ## [Glass Domes of Vivec](https://www.nexusmods.com/morrowind/mods/48935) and [Moonrain Edition](https://www.nexusmods.com/morrowind/mods/48946) by tewlwolow
@@ -99,6 +89,19 @@ If you are using [Project Atlas](https://www.nexusmods.com/morrowind/mods/45399)
 ## [Magicka Expanded](https://www.nexusmods.com/morrowind/mods/47111) by OperatorJack
 
 Install **00 - Framework**, **01 - Resource Pack** and **02 - Lore Friendly Pack** sub-packages. Vanilla Morrowind doesn't have Bound Greaves and Bound Pauldrons spell for some reason and Lore Friendly Pack adds them in the game.
+
+## [Enhanced Detection](https://www.nexusmods.com/morrowind/mods/47480) by OperatorJack and Enhanced Detection Lite ([Nexus](https://www.nexusmods.com/morrowind/mods/48471), [Moddinghall](https://mw.moddinghall.com/file/145-enhanced-detection-lite)) by Necrolesian
+
+Change this in `mods\OperatorJack\EnhancedDetection\main.lua`
+
+```
+if (timerController.active == false and timerController.timer == nil) then
+```
+to
+```
+if (timerController and timerController.active == false and
+        timerController.timer == nil) then
+```
 
 # Game Balance and Difficulty
 
@@ -139,6 +142,10 @@ Required for [Ahead of the Classes - Joseph Edit](https://github.com/JoanyMcKare
 
 Danae's original mod has preset classes for vanilla playable classes therefore not compatible with Better Character Classes. The Joseph Edit is not only compatible with Better Character Classes but also rebalance the loadouts to better suit BTBGI. You don't need neither TR_Data nor OAAB_Data as well.
 
+## [No Disease Labels](https://www.nexusmods.com/morrowind/mods/48295)
+
+An MWSE mod that substitutes all substrings `Blighted, Diseased, Infected, Plague, Plaguebearer` with empty strings in creature names. 
+
 ## [Service Requirements Revised](https://www.nexusmods.com/morrowind/mods/50715) by Sigorun
 
 Faction services (except healer service) are for faction members only and once a member, services are available for anyone ranked within one rank of the member they are trying to get services from.
@@ -154,6 +161,21 @@ Here is a list of places where you can find independent Enchanters:
 ## [DM_DB Armor Replacer TCBOO Patch](https://github.com/JoanyMcKarelyn/morrowind-modding-notes/raw/main/mods/DM_DB%20Armor%20Replacer%20TCBOO%20Patch.7z)
 
 This plugin merges the inventory of `db_assassin3` and `db_assassin3a` so Dark Brotherhood Assassins have both the Dark Brotherhood Mask from DM_DB Armor Replacer and the Adamantium Shortsword from There Can Be Only One. Loads after TCBOO (mlox rules written below).
+
+## [Silver Tongue](https://www.nexusmods.com/morrowind/mods/49086) by VitruvianGuar
+
+Change this in `mods\silverTongue\main.lua`
+```
+disposition = parent:createFillBar{id = tes3ui.registerID("MenuDialog_disposition2"), current = npcRef and npcRef.object.disposition, max = 100}
+```
+to this
+```
+disposition = parent:createFillBar{
+        id = tes3ui.registerID("MenuDialog_disposition2"),
+        current = npcRef and npcRef.object.disposition,
+        max = 100
+    }
+```
 
 # Not Optional Hardcore Mods
 
@@ -175,19 +197,16 @@ local object = containerMenu and
 
 ## [Ashfall](https://www.nexusmods.com/morrowind/mods/49057) by Merlord
 
-What do I like about Ashfall:
+Change this in `mods\mer\ashfall\camping\tents\tentcontroller.lua`
 
-- A necth leather backpack carried on my back and with my waterskin attached
-- A bedroll with Ashlander blanket that helps me get better sleep on the cold ground
-- Can't sleep because one blanket isn't enough to keep you from freezing on those cold nights
-- A simple tent that sleeps me and my pet
-- Bottles, Flasks, and Jugs that hold liquid
-- A hammock that I crafted using wood, fabric, straw, and can lay down on
-- A sack I made with fabric and rope
-
-## [GMST Menu](https://www.nexusmods.com/morrowind/mods/46428) by Merlord
-
-Required by the following mod.
+```
+return tentConfig.tentActivetoMiscMap[activeRef.object.id:lower()]
+```
+to 
+```
+return tentConfig.tentActivetoMiscMap[activeRef.object.id and
+               activeRef.object.id:lower()]
+```
 
 ## [JosephMcKean's GMST Adjustments](https://github.com/JoanyMcKarelyn/JosephMcKeans-GMST-Adjustments)
 
@@ -329,6 +348,13 @@ There Can Be Only One (Alt Fyr 2).ESP
 There Can Be Only One (Alt Fyr 2) MDMD Patch.ESP
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; @Morrowind Anti-Cheese Tweaked
+
+[Order]
+Wares_Vvardenfell.esp
+Morrowind Anti-Cheese Tweaked.esp
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; @BTB's Game Improvements (Necro Edit)
 
 [Order]
@@ -408,7 +434,7 @@ Delete the following records:
 - Enchantments: bm bloodaxe (overrides BTBGI edits with Expansions Integrated edits)
 - Enchantments: equity_ring_en_unique (overrides BTBGI edits with Patch for Purists edits)
 - Item Levelled: random excellent melee weapon (adds back Daedric weapons from Expansions Integrated, conflicts with There Can Be Only One)
-- Magic Effects: 53 (Miising Mysticism sound from both Patch for Purists and BTBGI)
+- Magic Effects: 53 (Missing Mysticism sound from both Patch for Purists and BTBGI)
 - Non Player Characters: sjoring hard-heart (overrides MDMD with Tribunal stats)
 - Spells: ash feast (overrides Rebalance series BTBGI Patch magicka cost with Beware the Sixth House edit)
 - Spells: shockball (overrides BTBGI spell area with Patch for Purists edit)
