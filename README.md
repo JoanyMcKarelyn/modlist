@@ -77,6 +77,11 @@ Bloom Soft
 Bloom Soft Sky
 EdgeAA
 ```
+# Graphics - Lighting
+
+## [The Midnight Oil](https://www.nexusmods.com/morrowind/mods/48293) by Merlord
+
+This mod prevents lanterns from expiring by forced unequipping when the duration of the lantern is less than 1. So when we try to hotkey equip a light, and the last light is an "expired" lantern, even if you have other lights in your inventory, the mod will only try equipping that one. So you'll need to manually equip a non-"expired" light. 
 
 # Graphics - Atlas Mods
 
