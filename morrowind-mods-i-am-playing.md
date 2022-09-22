@@ -1,32 +1,31 @@
-# Modding Notes
-
-Some notes I took for [this morrowind mod list](https://github.com/Necrolesian/morrowind-mod-list).
-
-# Utilites
-
-## [Wrye Mash](https://www.nexusmods.com/morrowind/mods/45439)
-
-### Installers Tab: Text Background
-
-- Yellow: Indicates that the package has "underrides" by higher order packages. It can be repaired by running Anneal or Anneal All.
-
-### Mods Tab: Line Colors
-
-- Red: The modification date/time of the master/plugin is problematic. Change the modification date of the files by a second or more via right panel Mod Details.
-
-## [mlox](https://github.com/rfuzzo/mlox/releases/) and [mlox-rules](https://github.com/DanaePlays/mlox-rules)
-
-I use mlox because I uninstall and reinstall mods a lot. Download zip and follow the steps from mlox-rules.
-
-# Convenience Mods
-
 ## [UI Expansion](https://www.nexusmods.com/morrowind/mods/46071) By NullCascade
 
-Features page Auto-select search bar: None (This really annoys me.)
+In `\UI Expansion\tooltip.lua`, first, find this line:
 
-## [Hot Quests](https://www.nexusmods.com/morrowind/mods/48976) by abot
+```
+if not e.object.id:find("Gold_") and not e.object.isKey then
+```
 
-Change key bind to `Ctrl-U` and `Ctrl-I` respectively because I am using Calendar. The default key bind closes my journal every time I type words that contain `u` or `i` in my notes. 
+and change it to:
+
+```
+if (not e.object.id:find("Gold_")) and
+        ((not e.object.isKey) or e.object.id:lower() == "bm_bearheart_unique" or
+            e.object.id:lower() == "bm_seeds_unique") then
+```
+
+Second, find this line:
+
+```
+if objectValue and e.object.weight then
+```
+
+and change it to:
+
+```
+if objectValue and e.object.weight and
+            (objectValue > 0 or e.object.weight > 0) then
+```
 
 ## [Essential Indicators](https://www.nexusmods.com/morrowind/mods/48267)
 
