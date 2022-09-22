@@ -1,4 +1,4 @@
-## [UI Expansion](https://www.nexusmods.com/morrowind/mods/46071) By NullCascade
+## [UI Expansion](https://www.nexusmods.com/morrowind/mods/46071)
 
 In `\UI Expansion\tooltip.lua`, first, find this line:
 
