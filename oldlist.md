@@ -1,38 +1,3 @@
-# Graphics - User Interface
-
-## [Crosshair White Dot](https://github.com/JoanyMcKarelyn/morrowind-modding-notes/raw/main/mods/Crosshair%20White%20Dot.7z)
-
-A white dot crosshair.
-
-## [Alternate Enchanted Item Icons](http://mw.modhistory.com/download-90-10395)
-
-Add the content of `..\Alternate Icon Set 2\` to archive named `Alternate Enchanted Items Icons`.
-
-# Graphics - Mesh Replacers
-
-## [Weapon Sheathing](https://www.nexusmods.com/morrowind/mods/46069) and [Bow Position Edit](https://www.nexusmods.com/morrowind/mods/46069)
-
-Make sure Weapon Sheathing is installed before Morrowind Optimization Patch **03 Weapon Sheathing Patch** and Bow Position Edit is installed after Weapon Sheathing.
-
-## [Morrowind Optimization Patch](https://github.com/mop-org/morrowind-optimization-patch)
-
-Grab mop from the GitHub repo not Nexus. In addition to the **00 Core** sub-package, install **01 Lake Fjalding Anti-Suck**, **02 Better Vanilla Textures** and **03 Weapon Sheathing Patch** sub-packages. Don't install the **03 Chuzei Fix** because we'll install a BTBGI compatible version later. Ignore the **05 Graphic Herbalism Patch**.
-
-# Graphics - Shaders and Weather
-
-## [MGE XE Shader Pack](https://www.dropbox.com/s/egtk0osv4vrgar2/MGE%20XE%20Shader%20Pack%202021-11-26.7z?dl=1)
-
-In the core sub-package, _delete_ the `MWSE` directory. Install only the core sub-package. Open up MGE XE. Doesn't matter the Enable shader checkbox is ticked here or not, you can always toggle it on and off in game. Here is the shader list I recommend (and their order is important):
-
-```
-MGG SSAO
-Underwater Interior Effects
-Underwater Effects
-Sunshafts
-Bloom Soft
-Bloom Soft Sky
-EdgeAA
-```
 # Graphics - Lighting
 
 ## [The Midnight Oil](https://www.nexusmods.com/morrowind/mods/48293) by Merlord
@@ -387,15 +352,3 @@ So when you run mlox, even if you don't use BTBGI Creature Buffs, mlox will firs
 What this results in is that the two mods we have installed get rearranged by rules that involved other mods that we don't have. So is it a bad thing or not? Well, in our case, since they don't conflict with each other, the load order shouldn't matter.
 
 However, there are a few cases those rules causing cycles. When you notice cycles caused by `mlox_user`, please report them to [mlox-rules](https://github.com/DanaePlays/mlox-rules) or #mlox-rules in the [Morrowind Modding Discord Server](https://discord.me/mwmods).
-
-## Merged Objects Fixes
-
-Delete the following records:
-
-- Enchantments: bm bloodaxe (overrides BTBGI edits with Expansions Integrated edits)
-- Enchantments: equity_ring_en_unique (overrides BTBGI edits with Patch for Purists edits)
-- Item Levelled: random excellent melee weapon (adds back Daedric weapons from Expansions Integrated, conflicts with There Can Be Only One)
-- Magic Effects: 53 (Missing Mysticism sound from both Patch for Purists and BTBGI)
-- Non Player Characters: sjoring hard-heart (overrides MDMD with Tribunal stats)
-- Spells: ash feast (overrides Rebalance series BTBGI Patch magicka cost with Beware the Sixth House edit)
-- Spells: shockball (overrides BTBGI spell area with Patch for Purists edit)
