@@ -28,7 +28,7 @@ Wares_Vvardenfell.esp
 Patch for Purists Wares Vvardenfell Patch.esp
 ```
 
-[Restock Filled Soul Gems](https://www.nexusmods.com/morrowind/mods/51809?tab=files&file_id=1000033105)
+## [Restock Filled Soul Gems](https://www.nexusmods.com/morrowind/mods/51809?tab=files&file_id=1000033105)
 
 Restocking supplies of filled soulgems have been added to a few merchants.
 
