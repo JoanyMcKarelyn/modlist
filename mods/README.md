@@ -8,6 +8,19 @@ Press alt to tell your companion to walk towards you. Useful when they are block
 
 Encourages more region exploration. 
 
+## [DM_DB Armor Replacer TCBOO Patch.7z](https://github.com/JoanyMcKarelyn/modlist/raw/main/mods/DM_DB%20Armor%20Replacer%20TCBOO%20Patch.7z)
+
+This plugin merges the inventory of `db_assassin3` and `db_assassin3a` so Dark Brotherhood Assassins have both the Dark Brotherhood Mask from DM_DB Armor Replacer and the Adamantium Shortsword from There Can Be Only One. Loads after TCBOO (mlox rules written below).
+
+```
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; @There Can Be Only One
+
+[Order]
+There Can Be Only One (Alt Fyr 2).ESP
+DM_DB Armor Replacer TCBOO Patch.esp
+```
+
 ## [Magicka Expanded - Lore Friendly Pack (Joseph Edit)](https://github.com/JoanyMcKarelyn/modlist/raw/main/mods/Magicka%20Expanded%20-%20Lore%20Friendly%20Pack%20(Joseph%20Edit).7z)
 
 Requires the original [Magicka Expanded](https://www.nexusmods.com/morrowind/mods/47111?tab=files&file_id=1000032151) subpackages **00 - Framework**, **01 - Resource Pack** and **02 - Lore Friendly Pack**. The difference is that 
@@ -21,7 +34,7 @@ Manually merges `bm_nordictomb_01`, `bm_nordictomb_02`, `bm_dungeonlloot_chest` 
 
 ```
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; @Patch for Purists Wares Vvardenfell Patch
+;; @Wares, @Friends and Foes, @F&F
 
 [Order]
 Wares_Vvardenfell.esp
